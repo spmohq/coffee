@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="googlebot" content="noindex, nofollow" />
+  <title>Creative Compass | Siva Prasad Mukherjee</title>
+  <link rel="icon" type="image/x-icon" href="spm.ico" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 15px 0;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    .deal-section {
+      background-color: #fff;
+      margin: 20px 0;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .deal-section h2 {
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+    .deal-section p {
+      font-size: 1.1em;
+    }
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 10px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .testimonial {
+      position: relative;
+      margin: 20px 0;
+      padding: 15px;
+      background-color: #f9f9f9;
+      border-left: 4px solid #007bff;
+    }
+    .testimonial p {
+      font-style: italic;
+    }
+    .copy-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9em;
+    }
+    .translate-btn {
+      margin-bottom: 20px;
+      display: inline-block;
+      padding: 8px 14px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Sell Your Offer Online</h1>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Lazy Load Translate Button -->
+    <button class="translate-btn" onclick="loadTranslate()">🌐 ভাষা পরিবর্তন করো</button>
+    <div id="google_translate_element"></div>
+
+    <!-- Testimonial Box with Copy Button -->
+    <div class="testimonial" id="testimonial1">
+      <button class="copy-btn" onclick="copyTestimonial('testimonial1')">Copy</button>
+      <p>এটা একটি উদাহরণ টেস্টিমোনিয়াল বাক্স। এখানে আপনার যে কোনও লেখা থাকবে।</p>
+      <p>পাঠক উপরের Copy বাটনে ক্লিক করলে শুধু এই লেখাগুলো কপি হবে।</p>
+    </div>
+
+    <!-- আরেকটা সেকশন -->
+    <div class="deal-section">
+      <h2>Step One</h2>
+      <p>এখানে স্টেপ ওয়ান এর বর্ণনা থাকবে।</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>Copyright &copy; <script>document.write(new Date().getFullYear())</script> <span lang="en">Siva Prasad Mukherjee. All Rights Reserved.</span></p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    function copyTestimonial(id) {
+      var container = document.getElementById(id);
+      var paragraphs = container.querySelectorAll("p");
+      var text = "";
+      paragraphs.forEach(function(p) {
+        text += p.innerText + "\n";
+      });
+
+      navigator.clipboard.writeText(text.trim()).then(function () {
+        alert("লেখা কপি হয়ে গেছে!");
+      }, function (err) {
+        alert("Error: " + err);
+      });
+    }
+
+    function loadTranslate() {
+      if (window.google && window.google.translate) return;
+
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+      document.body.appendChild(script);
+    }
+
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'bn'}, 'google_translate_element');
+    }
+  </script>
+</body>
+</html>
