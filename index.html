@@ -52,7 +52,8 @@
       background-color: #ffe74c;
     }
 
-    #qr-container {
+    #qr-container,
+    #upi-link-container {
       margin-top: 25px;
       display: none;
     }
@@ -62,6 +63,21 @@
       height: 220px;
       border-radius: 12px;
       border: 2px solid #ccc;
+    }
+
+    #upi-link {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #00c853;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 10px;
+      font-size: 18px;
+    }
+
+    #upi-link:hover {
+      background-color: #00e676;
     }
 
     #google_translate_element {
@@ -82,12 +98,18 @@
 
   <button onclick="handleDonate()">Donate via UPI</button>
 
+  <div id="upi-link-container">
+    <p>You'll be redirected to your UPI app to complete the donation:</p>
+    <a href="upi://pay?pa=spmohq@oksbi&cu=INR" id="upi-link">Pay via UPI</a>
+  </div>
+
   <div id="qr-container">
     <p>Or scan this QR code:</p>
     <img src="spm-gpay.jpeg" alt="UPI QR Code" />
   </div>
+
   <div style="padding-top: 30px;"> </div>
-  <!-- Ko-fi Button -->
+
   <p>If you're located outside India, you can support me here:</p>
   <div style="margin-top: 30px;">
     <a href="https://ko-fi.com/X8X0R2JFL" target="_blank">
@@ -102,7 +124,7 @@
 
     function handleDonate() {
       if (isMobileDevice()) {
-        window.location.href = "upi://pay?pa=spmohq@oksbi&cu=INR";
+        document.getElementById("upi-link-container").style.display = "block";
       } else {
         document.getElementById("qr-container").style.display = "block";
       }
