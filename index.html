@@ -2,26 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Buy Me a Chai</title>
-    <link rel="icon" type="image/x-icon" href="spm.ico" />
+  <link rel="icon" type="image/x-icon" href="spm.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Open Graph for Facebook -->
+  <meta property="og:title" content="☕ Buy Me a Chai" />
+  <meta property="og:description" content="Enjoying my work? Support with a virtual cup of chai ☕" />
+  <meta property="og:image" content="https://chai.spm.co.in/fb-preview.jpg" />
+  <meta property="og:url" content="https://chai.spm.co.in" />
+  <meta property="og:type" content="website" />
+
   <style>
     body {
       margin: 0;
-      padding: 0;
       font-family: system-ui, sans-serif;
       background-color: #fff8e1;
       display: flex;
-      justify-content: center;
-      align-items: center;
       flex-direction: column;
-      min-height: 100vh;
+      align-items: center;
+      padding: 30px 20px;
       text-align: center;
     }
 
-    .container {
-      max-width: 90%;
-      padding: 20px;
+    h1 {
+      font-size: 2em;
+      margin-bottom: 0.5em;
+    }
+
+    p {
+      font-size: 1.1em;
+      margin-bottom: 1.5em;
     }
 
     button {
@@ -33,18 +44,17 @@
       font-weight: bold;
       color: #333;
       cursor: pointer;
+      transition: 0.2s ease;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: all 0.2s ease-in-out;
     }
 
     button:hover {
       background-color: #ffe74c;
-      transform: translateY(-2px);
     }
 
     #qr-container {
-      margin-top: 20px;
-      display: none; /* Initially hidden */
+      margin-top: 25px;
+      display: none;
     }
 
     #qr-container img {
@@ -60,28 +70,21 @@
       right: 10px;
       font-size: 12px;
     }
-
-    @media (max-width: 600px) {
-      #qr-container {
-        display: none !important;
-      }
-    }
   </style>
 </head>
 <BODY oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
 
-  <!-- Google Translate Widget -->
+  <!-- Google Translate -->
   <div id="google_translate_element"></div>
 
-  <div class="container">
-    <h1>☕ Buy Me a Chai</h1>
-    <p>If you enjoy my work, you can support me with a small donation.</p>
-    <button onclick="handleDonate()">Donate via UPI</button>
+  <h1>☕ Buy Me a Chai</h1>
+  <p>If my work has helped or inspired you,<br />send a little chai my way!</p>
 
-    <div id="qr-container">
-      <p>Or scan this QR code with your UPI app:</p>
-      <img src="spm-gpay.jpeg" alt="UPI QR Code" />
-    </div>
+  <button onclick="handleDonate()">Donate via UPI</button>
+
+  <div id="qr-container">
+    <p>Or scan this QR code:</p>
+    <img src="spm-gpay.jpeg" alt="UPI QR Code" />
   </div>
 
   <script>
@@ -93,8 +96,7 @@
       if (isMobileDevice()) {
         window.location.href = "upi://pay?pa=spmohq@oksbi&cu=INR";
       } else {
-        // Show QR code instead of redirect
-        document.getElementById('qr-container').style.display = 'block';
+        document.getElementById("qr-container").style.display = "block";
       }
     }
   </script>
@@ -110,7 +112,7 @@
       }, 'google_translate_element');
     }
   </script>
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
