@@ -513,7 +513,7 @@
 <div id="donationModal" class="modal">
   <div class="modal-content">
     <span class="close-btn" onclick="closeModal()">&times;</span>
-    <div class="deal-section text-center">
+    <div class="deal-section text-center"><center>
       <p>যদি এই কনটেন্ট আপনার উপকারে এসে থাকে, তাহলে —</p>
       <p>☕ একটা ভার্চুয়াল চায়ের নিমন্ত্রণ রাখুন 🙏</p>
       <a href="https://chai.spm.in.net" style="text-decoration: none;">
@@ -521,7 +521,7 @@
           ☕ Buy Me a Chai
         </button>
       </a>
-      <p>ধন্যবাদ — আপনি পাশে থাকেন বলেই এগিয়ে চলা 🙌</p>
+      <p>ধন্যবাদ — আপনি পাশে থাকেন বলেই এগিয়ে চলা 🙌</p><center>
     </div>
   </div>
 </div>
@@ -643,18 +643,35 @@
 
 
 
+<!-- ✅ Final Modal Functions & Scroll Trigger -->
 <script>
-let modalShown = false;
-window.addEventListener('scroll', function() {
-  const scrollTop = window.scrollY;
-  const docHeight = document.documentElement.scrollHeight;
-  const windowHeight = window.innerHeight;
-  const scrollPercent = (scrollTop / (docHeight - windowHeight)) * 100;
-  if (scrollPercent >= 90 && !modalShown) {
-    openModal();
-    modalShown = true;
+  function openModal() {
+    document.getElementById('donationModal').style.display = 'block';
   }
-});
+
+  function closeModal() {
+    document.getElementById('donationModal').style.display = 'none';
+  }
+
+  window.onclick = function(e) {
+    if (e.target == document.getElementById('donationModal')) {
+      closeModal();
+    }
+  };
+
+  let modalShown = false;
+  window.addEventListener('scroll', function() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight;
+    const windowHeight = window.innerHeight;
+    const scrollPercent = (scrollTop / (docHeight - windowHeight)) * 100;
+
+    if (scrollPercent >= 90 && !modalShown) {
+      openModal();
+      modalShown = true;
+    }
+  });
 </script>
 </body>
+
 </html>
