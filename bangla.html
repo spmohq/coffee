@@ -268,65 +268,54 @@
       color: #0A2A66;
     }
 
-  /* Sticky Support Button */
-  .sticky-support-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 999;
-  }
-
-  .sticky-support-btn button {
-    background: #ffdd00;
-    color: #333;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 50px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    transition: background 0.3s ease;
-  }
-
-  .sticky-support-btn button:hover {
-    background: #f4c400;
-  }
-
-  /* Modal Base */
-  .modal {
-    display: none; /* Hidden by default */
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background: rgba(0, 0, 0, 0.6);
-  }
-
-  /* Modal Content Box */
-  .modal-content {
-    background: #fff;
-    margin: 10% auto;
-    padding: 30px 20px;
-    border-radius: 10px;
-    max-width: 400px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    position: relative;
-  }
-
-  /* Close Button */
-  .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    color: #333;
-    font-size: 24px;
-    font-weight: bold;
-    cursor: pointer;
-  }
+    .sticky-support-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+    }
+    .sticky-support-btn button {
+      background: #ffdd00;
+      color: #333;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: background 0.3s ease;
+    }
+    .sticky-support-btn button:hover {
+      background: #f4c400;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+    }
+    .modal-content {
+      background: #fff;
+      margin: 10% auto;
+      padding: 30px 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      position: relative;
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      color: #333;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+    }
 
   .deal-image-wrapper {
     width: 100%;
@@ -537,6 +526,16 @@
   </div>
 </div>
 
+<!-- Sticky Support Button -->
+  
+
+  <!-- Modal Structure -->
+  
+  </div>
+
+  <!-- Dummy Scroll Content for Test -->
+  <div style="height: 4000px;"></div>
+
 
   <!-- Footer -->
   <footer>
@@ -559,7 +558,7 @@
   function closeModal() { /* ... */ }
   window.onclick = function(e) { /* ... */ }
 
-  let modalShown = false;
+  
   window.addEventListener('scroll', function() {
     if (window.scrollY > 300 && !modalShown) {
       openModal();
@@ -639,40 +638,23 @@
   </script>
 
 <!-- Modal Functions & Scroll Trigger -->
+
+  
+
+
+
 <script>
-  // Open Modal
-  function openModal() {
-    document.getElementById('donationModal').style.display = 'block';
+let modalShown = false;
+window.addEventListener('scroll', function() {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight;
+  const windowHeight = window.innerHeight;
+  const scrollPercent = (scrollTop / (docHeight - windowHeight)) * 100;
+  if (scrollPercent >= 90 && !modalShown) {
+    openModal();
+    modalShown = true;
   }
-
-  // Close Modal
-  function closeModal() {
-    document.getElementById('donationModal').style.display = 'none';
-  }
-
-  // Close when clicking outside modal content
-  window.onclick = function(e) {
-    if (e.target == document.getElementById('donationModal')) {
-      closeModal();
-    }
-  };
-
-  // <--- Scroll Trigger JS (90% Version) --->
-  let modalShown = false;
-
-  window.addEventListener('scroll', function() {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight;
-    const windowHeight = window.innerHeight;
-    const scrollPercent = (scrollTop / (docHeight - windowHeight)) * 100;
-
-    if (scrollPercent >= 90 && !modalShown) {
-      openModal();
-      modalShown = true;
-    }
-  });
+});
 </script>
-
-
 </body>
 </html>
