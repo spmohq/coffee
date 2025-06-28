@@ -9,29 +9,36 @@
   <title>Creative Compass | Siva Prasad Mukherjee</title>
   <link rel="icon" type="image/x-icon" href="spm.ico" />
 
+  <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=68433345a7cb4a0019841b7c&product=sop' async='async'></script>
+
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f4f4f4;
+      line-height: 1.6;
     }
+
     .container {
       width: 90%;
       max-width: 1200px;
       margin: 0 auto;
       padding: 20px;
     }
+
     header {
       background-color: #333;
       color: #fff;
-      padding: 15px 0;
+      padding: 20px 0;
       text-align: center;
     }
+
     header h1 {
       margin: 0;
-      font-size: 2.5em;
+      font-size: 2.2em;
     }
+
     .deal-section {
       background-color: #fff;
       margin: 20px 0;
@@ -39,13 +46,38 @@
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
+
     .deal-section h2 {
       font-size: 1.8em;
       margin-bottom: 10px;
     }
+
     .deal-section p {
       font-size: 1.1em;
     }
+  .faq-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+  }
+  .faq-question {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 10px 0;
+    cursor: pointer;
+    outline: none;
+  }
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .faq-item.active .faq-answer {
+    max-height: 200px;
+  }
     .button {
       display: inline-block;
       padding: 10px 20px;
@@ -55,16 +87,137 @@
       text-decoration: none;
       border-radius: 5px;
     }
+
+  .full-width-button {
+    display: block;
+    width: 100%;
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+  }
+  .full-width-button:hover {
+    background-color: #0056b3;
+  }
+
+  .facebook-embed-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 130%; /* Aspect ratio */
+    overflow: hidden;
+    border-radius: 12px; /* আরেকটু সফট কার্ভ */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* subtle shadow, very clean */
+    margin-top: 20px;
+    background: #fff;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .facebook-embed-wrapper:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08); /* subtle lift on hover */
+  }
+
+  .facebook-embed-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  .social-button {
+    display: inline-block;
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .facebook-btn {
+    background-color: #1877f2; /* Facebook Official Blue */
+  }
+  .facebook-btn:hover {
+    background-color: #0e63c5;
+  }
+
+  .whatsapp-btn {
+    background-color: #25d366; /* WhatsApp Green */
+  }
+  .whatsapp-btn:hover {
+    background-color: #1ebe5d;
+  }
+
+
+  /* Common Wrapper Styles for both */
+  .video-embed-wrapper,
+  .shorts-embed-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin: 20px auto;
+    background: #000;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .video-embed-wrapper:hover,
+  .shorts-embed-wrapper:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  }
+
+  .video-embed-wrapper iframe,
+  .shorts-embed-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  .video-embed-wrapper {
+    aspect-ratio: 16 / 9;
+    max-width: 100%;
+  }
+
+  .shorts-embed-wrapper {
+    aspect-ratio: 9 / 16;
+    max-width: 400px; /* Desktop max width */
+  }
+
+  @media (max-width: 640px) {
+    .shorts-embed-wrapper {
+      max-width: 100%;
+    }
+  }
+
+
+
+
     .testimonial {
       position: relative;
       margin: 20px 0;
-      padding: 15px;
+      padding: 20px;
       background-color: #f9f9f9;
       border-left: 4px solid #007bff;
     }
+
     .testimonial p {
       font-style: italic;
+      margin: 10px 0;
     }
+
     .copy-btn {
       position: absolute;
       top: 10px;
@@ -72,31 +225,131 @@
       background-color: #007bff;
       color: #fff;
       border: none;
-      padding: 5px 10px;
+      padding: 6px 12px;
       border-radius: 4px;
       cursor: pointer;
-      font-size: 0.9em;
+      font-size: 0.85em;
     }
+
     .translate-btn {
-      margin-bottom: 20px;
+      margin: 20px 0;
       display: inline-block;
-      padding: 8px 14px;
+      padding: 8px 16px;
       background-color: #28a745;
       color: white;
       border: none;
       border-radius: 5px;
       cursor: pointer;
     }
+
     footer {
       background-color: #333;
       color: #fff;
       text-align: center;
-      padding: 10px 0;
-      margin-top: 20px;
+      padding: 20px 10px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 10px;
+    }
+
+    .footer-link {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s;
+      font-size: 0.95em;
+    }
+
+    .footer-link:hover {
+      color: #0A2A66;
+    }
+
+  /* Sticky Support Button */
+  .sticky-support-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+  }
+
+  .sticky-support-btn button {
+    background: #ffdd00;
+    color: #333;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: background 0.3s ease;
+  }
+
+  .sticky-support-btn button:hover {
+    background: #f4c400;
+  }
+
+  /* Modal Base */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  /* Modal Content Box */
+  .modal-content {
+    background: #fff;
+    margin: 10% auto;
+    padding: 30px 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+  }
+
+  /* Close Button */
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .deal-image-wrapper {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-top: 15px;
+  }
+  .deal-image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+  }
+
+    @media (max-width: 600px) {
+      .footer-links {
+        flex-direction: column;
+        gap: 8px;
+      }
     }
   </style>
 </head>
-<body>
+<BODY oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
   <header>
     <div class="container">
       <h1>Sell Your Offer Online</h1>
@@ -105,38 +358,261 @@
 
   <div class="container">
     <!-- Lazy Load Translate Button -->
-    <button class="translate-btn" onclick="loadTranslate()">🌐 Translate</button>
+    <button class="translate-btn" onclick="loadTranslate()">🌐 Read in your own language</button>
     <div id="google_translate_element"></div>
 
-    <!-- Testimonial Box with Copy Button -->
+<!-- New Deal Section with Image Start -->
+<div class="deal-section">
+  <h2>Our Special Deal</h2>
+  <p>এখানে আপনার অফারের বিস্তারিত বর্ণনা দিন। সুন্দর করে বর্ণনা দিন কেন এই ডিল সেরা।</p>
+  <div class="deal-image-wrapper">
+    <img src="kli.jpg" alt="Special Deal Image">
+  </div>
+</div>
+<!-- New Deal Section with Image End -->
 
-<div class="testimonial" id="testimonial1">
-  <button class="copy-btn" onclick="copyTestimonial('testimonial1')">Copy</button>
-  <p class="notranslate">এই লেখাগুলো translate হবে না।</p>
-  <p class="notranslate">আর এইটাও না।</p>
+<div class="deal-section">
+  <h2>Step Two</h2>
+  <p>এই ডিল সেকশনের বর্ণনা...</p>
+  <!-- বাটন এখানে -->
+  <a href="#" class="full-width-button" onclick="openDeal('https://your-secret-url.com/checkout', '_blank')">এখনই কিনুন</a>
 </div>
 
-    <!-- আরেকটা সেকশন -->
-    <div class="deal-section">
-      <h2>Step One</h2>
-      <p>এখানে স্টেপ ওয়ান এর বর্ণনা থাকবে।</p>
+
+<!-- FAQ Section Start -->
+<div class="deal-section">
+  <h2>প্রায় জিজ্ঞাসিত প্রশ্নাবলী (FAQ)</h2>
+
+  <div class="faq-item">
+    <button class="faq-question">এই অফার কীভাবে কিনতে পারি?</button>
+    <div class="faq-answer">
+      <p>আপনি পেজে দেওয়া বাটনে ক্লিক করে সহজেই অফারটি কিনতে পারবেন। পেমেন্টের সকল নির্দেশনা সেখানে দেওয়া আছে।</p>
     </div>
   </div>
 
+  <div class="faq-item">
+    <button class="faq-question">পেমেন্ট কি নিরাপদ?</button>
+    <div class="faq-answer">
+      <p>হ্যাঁ, আপনার পেমেন্ট ১০০% নিরাপদ এবং এনক্রিপ্টেড পদ্ধতিতে প্রসেস করা হয়।</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">আমি কতদিনের মধ্যে ডেলিভারি পাব?</button>
+    <div class="faq-answer">
+      <p>পেমেন্টের পরে আপনি সাথে সাথেই ইমেইলের মাধ্যমে ডেলিভারি পাবেন। কোনো সমস্যায় আমাদের সাপোর্ট টিম সহায়তা করবে।</p>
+    </div>
+  </div>
+    </div>
+<!-- FAQ Section End -->
+
+
+<!-- Deal Section with YouTube Video Embed Start -->
+<div class="deal-section">
+  <h2>ভিডিও দেখুন</h2>
+  <p>এই পূর্ণ দৈর্ঘ্যের ভিডিও দেখে আমাদের অফার ও সুবিধাগুলো বিস্তারিত জানুন।</p>
+  <div class="video-embed-wrapper">
+    <iframe 
+      src="https://www.youtube.com/embed/rjkyq3WXhZg" 
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+      referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+<!-- Deal Section with YouTube Video Embed End -->
+
+<!-- Deal Section with YouTube Shorts Embed Start -->
+<div class="deal-section">
+  <h2>এক ঝলকে দেখুন</h2>
+  <p>এই শর্ট ভিডিও দেখে কয়েক সেকেন্ডেই মূল হাইলাইট জেনে নিন!</p>
+  <div class="shorts-embed-wrapper">
+    <iframe 
+      src="https://www.youtube.com/embed/cyc1Mr-g6Zk?rel=0" 
+      title="YouTube Shorts"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      allowfullscreen></iframe>
+  </div>
+</div>
+<!-- Deal Section with YouTube Shorts Embed End -->
+
+
+
+
+<div class="deal-section">
+  <h2>আমাদের Facebook আপডেট</h2>
+  <p>নতুন অফার, রিভিউ ও গল্প পেতে আমাদের ফেসবুক পেজটি ফলো করুন।</p>
+  <div class="facebook-embed-wrapper">
+    <iframe 
+      src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fsocjhq%2Fposts%2Fpfbid02hAG2yugykNZeMyAE8ZULCt37k9ZQKRrREhKNAtJvuAaPwrd1iu3sC9DLmwi8XyNwl&width=500&show_text=true&appId=306846107120506&height=583" 
+      scrolling="no"
+      frameborder="0"
+      allowfullscreen="true"
+      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+      title="Embedded Facebook Post"></iframe>
+  </div>
+</div>
+<!-- Deal Section with Facebook Embed End -->
+
+
+
+
+
+
+
+
+
+    <!-- Testimonial Box with Copy Button -->
+    <div class="testimonial notranslate" id="testimonial1">
+      <button class="copy-btn" onclick="copyTestimonial('testimonial1')">Copy</button>
+      <div style="padding-top: 10px;"> </div>
+      <p>এটা একটি উদাহরণ টেস্টিমোনিয়াল বাক্স। এখানে আপনার যে কোনও লেখা থাকবে।</p>
+      <p>পাঠক উপরের Copy বাটনে ক্লিক করলে শুধু এই লেখাগুলো কপি হবে।</p>
+    </div>
+
+<div class="testimonial" id="testimonial2">
+  <button class="copy-btn" onclick="copyTestimonial('testimonial2')">Copy</button>
+  <div style="padding-top: 10px;"> </div>
+  <p>এইটা দ্বিতীয় টেস্টিমোনিয়াল এর লেখা।</p>
+  <p>আরও লেখা থাকলে...</p>
+</div>
+
+
+<!-- Deal Section with Social Buttons Start -->
+<div class="deal-section text-center">
+  <h2>যোগাযোগ রাখো</h2>
+  <p>আমাদের Facebook এ Follow করো এবং সরাসরি WhatsApp এ যোগাযোগ করো।</p>
+  <button onclick="openFacebookApp()" class="social-button facebook-btn">
+    Follow us on Facebook
+  </button>
+  <br />
+  <button onclick="openWhatsApp()" class="social-button whatsapp-btn">
+    Contact on WhatsApp
+  </button>
+</div>
+<!-- Deal Section with Social Buttons End -->
+
+
+
+    <!-- Chai Section -->
+    <div class="deal-section">
+
+      <center>
+
+<p>যদি এই কনটেন্ট আপনার উপকারে এসে থাকে, তাহলে —</p>
+
+<p>☕ একটা ভার্চুয়াল চায়ের নিমন্ত্রণ রাখুন 🙏</p>
+<a href="https://chai.spm.in.net" style="text-decoration: none;">
+  <button style="padding: 10px 20px; background-color: #ffdd00; border: none; border-radius: 8px; font-size: 16px; cursor: pointer;">
+    ☕ Buy Me a Chai
+  </button>
+</a>
+<p>ধন্যবাদ — আপনি পাশে থাকেন বলেই এগিয়ে চলা 🙌</p>
+<div style="padding-bottom: 10px;"> </div>
+</center>
+
+    </div>
+  </div>
+
+<!-- Sticky Support Button -->
+<div class="sticky-support-btn">
+  <button onclick="openModal()">☕ Support Us</button>
+</div>
+
+<!-- Modal Structure -->
+<div id="donationModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <div class="deal-section text-center">
+      <p>যদি এই কনটেন্ট আপনার উপকারে এসে থাকে, তাহলে —</p>
+      <p>☕ একটা ভার্চুয়াল চায়ের নিমন্ত্রণ রাখুন 🙏</p>
+      <a href="https://chai.spm.in.net" style="text-decoration: none;">
+        <button style="padding: 10px 20px; background-color: #ffdd00; border: none; border-radius: 8px; font-size: 16px; cursor: pointer;">
+          ☕ Buy Me a Chai
+        </button>
+      </a>
+      <p>ধন্যবাদ — আপনি পাশে থাকেন বলেই এগিয়ে চলা 🙌</p>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Footer -->
   <footer>
-    <p>Copyright &copy; <script>document.write(new Date().getFullYear())</script> <span lang="en">Siva Prasad Mukherjee. All Rights Reserved.</span></p>
+    <div class="footer-links">
+      <a href="#" class="footer-link" onclick="return openPopup('cookie-policy.html');">Cookie Policy</a>
+      <a href="#" class="footer-link" onclick="return openPopup('terms-conditions.html');">Terms & Conditions</a>
+      <a href="#" class="footer-link" onclick="return openPopup('privacy-policy.html');">Privacy Policy</a>
+      <a href="#" class="footer-link" onclick="return openPopup('contact.html');">Support</a>
+    </div>
+    <p>Copyright &copy;
+      <script>document.write(new Date().getFullYear())</script>
+      <span lang="en">Siva Prasad Mukherjee. All Rights Reserved.</span>
+    </p>
   </footer>
 
   <!-- Scripts -->
+
+<script>
+  function openModal() { /* ... */ }
+  function closeModal() { /* ... */ }
+  window.onclick = function(e) { /* ... */ }
+
+  let modalShown = false;
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 300 && !modalShown) {
+      openModal();
+      modalShown = true;
+    }
+  });
+</script>
+
+<script>
+  function openFacebookApp() {
+    const pageId = "112325471487344";
+    const fallbackUrl = "https://www.facebook.com/studyskills9";
+
+    window.location = "fb://page/" + pageId;
+
+    setTimeout(() => {
+      window.location.href = fallbackUrl;
+    }, 1500);
+  }
+
+  function openWhatsApp() {
+    const phoneNumber = "919883787947";
+    const message = encodeURIComponent("Hi! I saw your post and want to connect.");
+    const waUrl = "https://wa.me/" + phoneNumber + "?text=" + message;
+
+    window.location.href = waUrl;
+  }
+</script>
+
+<script>
+  const faqQuestions = document.querySelectorAll('.faq-question');
+  faqQuestions.forEach(q => {
+    q.addEventListener('click', function() {
+      const item = this.parentElement;
+      item.classList.toggle('active');
+    });
+  });
+</script>
+
+<script>
+  function openDeal(url, target) {
+    window.open(url, target);
+  }
+</script>
+
   <script>
     function copyTestimonial(id) {
       var container = document.getElementById(id);
       var paragraphs = container.querySelectorAll("p");
       var text = "";
-      paragraphs.forEach(function(p) {
+      paragraphs.forEach(function (p) {
         text += p.innerText + "\n";
       });
-
       navigator.clipboard.writeText(text.trim()).then(function () {
         alert("লেখা কপি হয়ে গেছে!");
       }, function (err) {
@@ -146,7 +622,6 @@
 
     function loadTranslate() {
       if (window.google && window.google.translate) return;
-
       var script = document.createElement('script');
       script.type = 'text/javascript';
       script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
@@ -154,8 +629,50 @@
     }
 
     function googleTranslateElementInit() {
-      new google.translate.TranslateElement({pageLanguage: 'bn'}, 'google_translate_element');
+      new google.translate.TranslateElement({ pageLanguage: 'bn' }, 'google_translate_element');
+    }
+
+    function openPopup(url) {
+      window.open(url, '_blank', 'toolbar=0,location=0,menubar=0,width=600,height=600,scrollbars=yes,resizable=yes');
+      return false;
     }
   </script>
+
+<!-- Modal Functions & Scroll Trigger -->
+<script>
+  // Open Modal
+  function openModal() {
+    document.getElementById('donationModal').style.display = 'block';
+  }
+
+  // Close Modal
+  function closeModal() {
+    document.getElementById('donationModal').style.display = 'none';
+  }
+
+  // Close when clicking outside modal content
+  window.onclick = function(e) {
+    if (e.target == document.getElementById('donationModal')) {
+      closeModal();
+    }
+  };
+
+  // <--- Scroll Trigger JS (90% Version) --->
+  let modalShown = false;
+
+  window.addEventListener('scroll', function() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight;
+    const windowHeight = window.innerHeight;
+    const scrollPercent = (scrollTop / (docHeight - windowHeight)) * 100;
+
+    if (scrollPercent >= 90 && !modalShown) {
+      openModal();
+      modalShown = true;
+    }
+  });
+</script>
+
+
 </body>
 </html>
